@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/layout/Tab.tsx", "src/redux"  ]
 }
