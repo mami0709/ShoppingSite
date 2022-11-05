@@ -1,7 +1,7 @@
 import React from "react";
 // import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
-import  productsReducer  from "../redux/slice/products"
+import  productsReducer  from "./slice/products"
 
 export const store = configureStore({
   reducer: {
