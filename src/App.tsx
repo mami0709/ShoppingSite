@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { useSelector, useDispatch } from "react-redux";
+import { setProducts, ProductState } from "./redux/slice/products";
+import { useState } from "react";
+import {  ProductsData } from "./ProductData"
+import { Box, Text,  } from '@chakra-ui/react'
+
 
 function App() {
+  
+  const taskList:any = useSelector<ProductState>((state:any) => state.products.value);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Box >
+        <h1>Shopping Site!</h1>
+        <Box>
+          {taskList.map((product:any) => (
+            <Box>   
+              <Text>{product.title}</Text>
+              <Text>{product.price}</Text>
+              {/* <Text>{product.id}</Text> */}
+              {/* TODO:商品画像の追加 */}
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    </>
   );
 }
 
